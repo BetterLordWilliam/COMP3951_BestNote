@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="COMP3951_BestNote.Views.BestNoteFileManager">
+
+    <Border Stroke="#2e2e2e">
+        <Grid RowDefinitions="Auto,*"
+              VerticalOptions="Fill">
+            <VerticalStackLayout>
+                <Label Text="File Manager Options"/>
+                <HorizontalStackLayout Spacing="5"
+                                       Padding="5">
+                    <Button x:Name="addFile" IsEnabled="False" Text="Add File"></Button>
+                    <Button x:Name="addFolder" IsEnabled="False" Text="Add Folder"></Button>
+                    <Button x:Name="deleteItem" IsEnabled="False" Text="Delete"></Button>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1"
+                                 VerticalOptions="FillAndExpand"
+                                 BackgroundColor="#272727">
+                <Label Text="File Explorer TODO" />
+            </VerticalStackLayout>
+        </Grid>
+    </Border>
+</ContentView>

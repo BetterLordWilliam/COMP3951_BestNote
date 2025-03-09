@@ -60,8 +60,36 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	  <AndroidResource Remove="ViewModels\**" />
+	  <Compile Remove="ViewModels\**" />
+	  <EmbeddedResource Remove="ViewModels\**" />
+	  <MauiCss Remove="ViewModels\**" />
+	  <MauiXaml Remove="ViewModels\**" />
+	  <None Remove="ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.40" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\COMP3951_BestNoteServices\COMP3951_BestNoteServices.csproj" />
+	  <ProjectReference Include="..\COMP3951_BestNoteViewModels\COMP3951_BestNoteViewModels.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\BestNoteFileManager.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BestNoteHeader.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BestNoteMainPane.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
