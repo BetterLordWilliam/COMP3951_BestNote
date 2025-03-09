@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:views="clr-namespace:COMP3951_BestNote.Views"
+             xmlns:viewmodels="clr-namespace:COMP3951_BestNoteViewModels;assembly=COMP3951_BestNoteViewModels"
              x:Class="COMP3951_BestNote.MainPage">
 
+    <ContentPage.BindingContext>
+        <viewmodels:BestNoteMainPageViewModel />
+    </ContentPage.BindingContext>
+    
     <Border Stroke="#474747"
             StrokeThickness="2"
             StrokeShape="RoundRectangle 0,0,5,5"
@@ -16,14 +21,17 @@
                             HorizontalSpacing="5">
 
             <views:BestNoteHeader toolkit:DockLayout.DockPosition="Top"
-                                  VerticalOptions="Fill"
-                                  HorizontalOptions="Fill" />
-            <views:BestNoteFileManager toolkit:DockLayout.DockPosition="Left"
+                                  HorizontalOptions="Fill"
+                                  MaximumHeightRequest="150" />
+
+            <views:BestNoteFileManager BindingContext="{Binding BestNoteFileManagerViewModel}"
+                                       toolkit:DockLayout.DockPosition="Left"
                                        VerticalOptions="Fill"
-                                       HorizontalOptions="Fill" />
+                                       MaximumWidthRequest="250" />
+
             <views:BestNoteMainPane toolkit:DockLayout.DockPosition="None"
-                                    VerticalOptions="Fill"
-                                    HorizontalOptions="Fill" />
+                                VerticalOptions="Fill"
+                                HorizontalOptions="Fill" />
 
         </toolkit:DockLayout>
     </Border>

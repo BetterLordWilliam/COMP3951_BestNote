@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using COMP3951_BestNoteViewModels.FileManagement;
+using COMP3951_BestNoteViewModels;
 
 namespace COMP3951_BestNote;
 

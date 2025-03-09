@@ -24,8 +24,4 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.40" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\COMP3951_BestNoteServices\COMP3951_BestNoteServices.csproj" />
-	</ItemGroup>
-
 </Project>
